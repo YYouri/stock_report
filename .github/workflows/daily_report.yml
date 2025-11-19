@@ -27,8 +27,8 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name 'YYouri'
+          git config --global user.email 'YYouri@github.com'        
           git add docs/
           git commit -m "📅 Update daily news & stock report" || echo "No changes to commit"
           git push
