@@ -29,7 +29,8 @@ with open(report_file, "w", encoding="utf-8") as f:
         res = requests.get(news_url, timeout=10)
         res.raise_for_status()
         soup = BeautifulSoup(res.text, "html.parser")
-        articles = soup.select("section.news_sec top_news_sec is_active ul li a")[:top_n]
+        selector = "section.news_sec.top_news_sec.is_active ul li a div h3"
+        articles = soup.select(selector)[:top_n]
         if not articles:
             f.write("뉴스 데이터를 불러오지 못했습니다.\n\n")
         for i, article in enumerate(articles, 1):
