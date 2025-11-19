@@ -29,7 +29,7 @@ with open(report_file, "w", encoding="utf-8") as f:
         res = requests.get(news_url, timeout=10)
         res.raise_for_status()
         soup = BeautifulSoup(res.text, "html.parser")
-        selector = "ul.popular_news_list li a div.txt_area h3"
+        selector = "section.popular_news_sec ul li a"
         articles = soup.select(selector)[:top_n]
         if not articles:
             f.write("뉴스 데이터를 불러오지 못했습니다.\n\n")
