@@ -1,0 +1,8 @@
+# config.yaml
+news:
+  url: "https://m.mk.co.kr/news/ranking/"  # 경제 뉴스 URL
+  top_n: 10                                         # 상위 몇 개 뉴스
+
+stocks:
+  symbols: ["AAPL", "MSFT", "GOOGL", "TSLA"]       # 관심 주식
+  history_days: 5                                  # 과거 며칠치 데이터
